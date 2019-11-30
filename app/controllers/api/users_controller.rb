@@ -3,4 +3,16 @@ class Api::UsersController < ApplicationController
     @users = User.all
     render 'index.json.jb'
   end
+  def create
+    @user = User.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name]
+    )
+    @user.save
+    render 'show.json.jb'
+  end
+  def show
+    @user = User.find_by(id: params[:id])
+    render 'show.json.jb'
+  end
 end
