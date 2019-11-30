@@ -1,0 +1,5 @@
+{
+  species: @animal.species,
+  color: @animal.color,
+  favorites: @animal.favorites
+}
