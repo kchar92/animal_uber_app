@@ -24,4 +24,9 @@ class Api::AnimalsController < ApplicationController
     @animal.save
     render 'show.json.jb'
   end
+  def destroy
+    @animal = Animal.find_by(id: params[:id])
+    @animal.destroy
+    render 'destroy.json.jb'
+  end
 end
