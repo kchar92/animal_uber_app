@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     get "/animals/:id" => "animals#show"
     patch "/animals/:id" => "animals#update"
     delete "/animals/:id" => "animals#destroy"
+
+    #sessions
+    post "/sessions" => "sessions#create"
   end
 end
