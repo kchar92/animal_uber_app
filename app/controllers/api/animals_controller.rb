@@ -1,7 +1,11 @@
 class Api::AnimalsController < ApplicationController
   def index
-    @animals = Animal.all
-    render 'index.json.jb'
+    if current_user
+      @animals = Animal.all
+      render 'index.json.jb'
+    else
+      render json: []
+    end
   end
   def create
     @animal = Animal.new(
