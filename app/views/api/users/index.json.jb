@@ -1,7 +1,6 @@
 @users.map do |user| {
   id: user.id,
-  first_name: user.first_name,
-  last_name: user.last_name,
-  full_name: user.full_name
+  name: user.name,
+  email: user.email
 }
 end

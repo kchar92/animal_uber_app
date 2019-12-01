@@ -4,12 +4,17 @@ class Api::UsersController < ApplicationController
     render 'index.json.jb'
   end
   def create
-    @user = User.new(
-      first_name: params[:first_name],
-      last_name: params[:last_name]
+    user = User.new(
+    name: params[:name],
+    email: params[:email],
+    password: params[:password],
+    password_confirmation: params[:password_confirmation]
     )
-    @user.save
-    render 'show.json.jb'
+    if user.save
+      render json: { message: "User created successfully" }, status: :created
+    else
+      render json: { errors: user.errors.full_messages }, status: :bad_request
+    end
   end
   def show
     @user = User.find_by(id: params[:id])
