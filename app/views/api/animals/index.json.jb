@@ -1,7 +1,7 @@
 @animals.map do |animal|
   {
     id: animal.id,
-    animal: animal.species,
+    species: animal.species,
     color: animal.color,
     favorites: animal.favorites
   }

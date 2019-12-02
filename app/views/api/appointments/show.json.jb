@@ -1,0 +1,8 @@
+{
+  appointment_id: @appointment.id,
+  user: @appointment.user.name,
+  animal_id: @appointment.animal_id,
+  species: @appointment.animal.species,
+  datetime: @appointment.datetime,
+  request: @appointment.request
+}
