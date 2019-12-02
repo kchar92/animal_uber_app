@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     # appointments
+    get "/appointments" => "appointments#index"
     post "/appointments" => "appointments#create"
   end
 end

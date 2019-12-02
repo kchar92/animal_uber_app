@@ -1,4 +1,9 @@
 class Api::AppointmentsController < ApplicationController
+  before_action :authenticate_user
+  def index
+    @appointments = current_user.appointments
+    render 'index.json.jb'
+  end
   def create
     @appointment = Appointment.new(
       user_id: current_user.id,
