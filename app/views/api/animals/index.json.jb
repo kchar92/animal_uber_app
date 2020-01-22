@@ -4,5 +4,6 @@
     species: animal.species,
     color: animal.color,
     favorites: animal.favorites
+    #this is a test
   }
 end
